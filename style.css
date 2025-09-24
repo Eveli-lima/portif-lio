@@ -1,5 +1,5 @@
 ﻿body {
-    display: flex;
+    display: flex; /* Usando flexbox para centralizar o conteúdo */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -8,7 +8,7 @@
 }
 
 .container-imagem {
-    position: fixed;
+    position: fixed; /* Mantém a imagem fixa na tela */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,7 +23,7 @@
 }
 
 .tela-monitor {
-    position: absolute;
+    position: absolute; /* Posiciona a tela dentro do contêiner */
     top: 29.8%;
     left: 21.8%;
     width: 40.38%;
@@ -52,7 +52,7 @@
     margin-bottom: 200px;
     margin-left: 28px;
     padding: 0;
-    white-space: nowrap;
+    white-space: nowrap; /* Impede a quebra de linha */
     overflow: hidden;
     animation: digitando 4s steps(21, end) forwards;
 }
@@ -68,7 +68,7 @@
     opacity: 0;
     animation: aparecer 0s forwards 4s, piscar 0.8s steps(1) infinite 4s;
 }
-
+ /* @keyframes define os estágios da animação começo, meio e fim */
 @keyframes digitando {
     from { width: 0; }
     to { width: 100%; }
@@ -88,17 +88,17 @@
     width: 100%;
 }
 
-.monitor-nav ul {
+.monitor-nav ul { 
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center;
-    gap: 3px;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 3px; /* Espaçamento entre os itens */
 }
 
 .monitor-nav a {
     color: #000000;
-    text-decoration: none;
+    text-decoration: none; /* Remove o sublinhado dos links */
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1rem;
     text-shadow: 0 0 3px #00ff00;
@@ -107,9 +107,9 @@
     border: 1px solid rgba(0, 221, 0, 0.5);
     border-radius: 3px;
     transition: all 0.3s ease;
-    pointer-events: auto;
+    pointer-events: auto; /* Permite a interação com os links *
 }
-
+/* :hover é um "seletor de estado" do CSS que aplica estilos quando o usuário passa o mouse sobre o elemento. */
 .monitor-nav a:hover {
     background-color: #00ff00;
     color: #000000;

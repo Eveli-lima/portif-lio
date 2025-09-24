@@ -1,1 +1,111 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Portfólio Éveli Lima</title>
+    <link rel="stylesheet" href="contato.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+
+<main class="conteudo">
+    <div class="conteudo-principal">
+        <h1 id="titulo"></h1>
+        <p id="paragrafo"></p>
+        <ul class="lista-contatos">
+            <li>
+                <a href="https://www.linkedin.com/in/seu-usuario/" target="_blank" rel="external">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/Eveli-lima" target="_blank" rel="external">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:seuemail@example.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <nav id="footer-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Mim</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li class="active"><a href="contato.html">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        <p>© 2025 <strong>Éveli Lima</strong> | Todos os direitos reservados.</p>
+    </footer>
+</main>
+
+<script>
+    function typeWriter(element, text, speed) {
+        return new Promise(resolve => {
+            element.innerHTML = '';
+            element.style.opacity = 1;
+            let i = 0;
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                    resolve();
+                }
+            }, speed);
+        });
+    }
+
+    async function startAnimationSequence() {
+        const h1 = document.getElementById('titulo');
+        const p = document.getElementById('paragrafo');
+        const contactItems = document.querySelectorAll('.lista-contatos li');
+        const footerNav = document.querySelector('#footer-nav');
+        const footer = document.querySelector('.conteudo footer');
+        const contentContainer = document.querySelector('.conteudo');
+        
+        const h1Text = "> Contato";
+        const pText = "Adoraria me conectar com você! Seja para falar sobre tecnologia, design, ou oportunidades, aqui estão os melhores lugares para me encontrar.";
+        
+        p.innerText = pText;
+
+        await typeWriter(h1, h1Text, 120);
+        await typeWriter(p, pText, 20);
+        
+        let lastItemDelay = 0;
+        contactItems.forEach((item, index) => {
+            const currentDelay = 0.2 + index * 0.2;
+            item.style.animationDelay = `${currentDelay}s`;
+            lastItemDelay = currentDelay;
+        });
+        
+        const navDelay = lastItemDelay + 0.4;
+        const footerDelay = navDelay + 0.2;
+
+        footerNav.style.animationDelay = `${navDelay}s`;
+        footer.style.animationDelay = `${footerDelay}s`;
+
+        contentContainer.classList.add('show-content');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(startAnimationSequence, 500);
+    });
+</script>
+
+</body>
+</html>

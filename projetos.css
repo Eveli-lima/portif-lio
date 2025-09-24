@@ -1,125 +1,195 @@
-﻿/* Configurações gerais (semelhante ao seu outro CSS) */
-body {
-  background-color: #000000;
-  color: #00dd00;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  overflow-x: hidden;
+﻿body {
+    background-color: #000000;
+    color: #00dd00;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .conteudo {
-  width: 100%;
-  max-width: 900px;
+    width: 100%;
+    max-width: 900px;
 }
 
 @keyframes surgir {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Título (controlado pelo JS) */
 h1 {
-  font-size: 2.5rem;
-  text-shadow: 0 0 5px rgba(0, 221, 0, 0.5);
-  margin-bottom: 40px;
-  text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px rgba(0, 221, 0, 0.5);
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-/* Grid de Projetos */
 .projetos-grid {
-  display: flex;
-  flex-wrap: wrap; /* Permite que os cards quebrem a linha */
-  gap: 25px;       /* Espaçamento entre os cards */
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
 }
 
-/* Card de Projeto Individual */
 .projeto-card {
-  border: 1px solid #00dd00;
-  padding: 20px;
-  flex-basis: 350px; /* Largura base de cada card */
-  flex-grow: 1;      /* Permite que o card cresça para ocupar espaço */
-  opacity: 0;      /* Começa invisível para a animação */
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espaço entre os elementos dentro do card */
+    border: 1px solid #00dd00;
+    padding: 20px;
+    flex-basis: 350px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .projeto-card h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #ffffff; /* Destaque para o título do projeto */
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ffffff;
 }
 
 .projeto-card p {
-  margin: 0;
-  line-height: 1.6;
-  flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível, alinhando os links no final */
+    margin: 0;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
-/* Tags de tecnologia */
+hr {
+    border: 1px dashed rgba(0, 221, 0, 0.3);
+    width: 100%;
+}
+
 .projeto-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .projeto-tags span {
-  background-color: rgba(0, 221, 0, 0.1);
-  border: 1px solid rgba(0, 221, 0, 0.5);
-  padding: 5px 10px;
-  font-size: 0.9rem;
-  border-radius: 4px;
+    background-color: rgba(0, 221, 0, 0.1);
+    border: 1px solid rgba(0, 221, 0, 0.5);
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
 }
 
-/* Links do projeto */
 .projeto-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .link-projeto {
-  color: #000000;
-  background-color: #00dd00;
-  text-decoration: none;
-  padding: 8px 15px;
-  border: 1px solid #00dd00;
-  transition: all 0.3s ease;
+    color: #000000;
+    background-color: #00dd00;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid #00dd00;
+    transition: all 0.3s ease;
 }
 
 .link-projeto:hover {
-  background-color: #000000;
-  color: #00dd00;
+    background-color: #000000;
+    color: #00dd00;
 }
 
-/* Link de Voltar e Animações */
-.link-voltar {
-  display: inline-block;
-  margin-top: 40px;
-  color: #00dd00;
-  text-decoration: none;
-  border: 1px solid #00dd00;
-  padding: 8px 15px;
-  opacity: 0; /* Começa invisível */
+h6,
+footer,
+.projeto-card,
+#footer-nav {
+    opacity: 0;
 }
 
-.link-voltar:hover {
-  background-color: #00dd00;
-  color: black;
+h6 {
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* Classe que o JS adiciona para iniciar as animações */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(0, 221, 0, 0.7);
+    margin-top: 20px;
+}
+
 .conteudo.show-content .projeto-card,
-.conteudo.show-content .link-voltar {
-  animation: surgir 0.7s forwards;
+.conteudo.show-content #footer-nav,
+.conteudo.show-content h6,
+.conteudo.show-content footer {
+    animation: surgir 0.7s forwards;
+}
+
+mark {
+    background-color: #00dd00;
+    color: black;
+    padding: 0 2px;
+}
+
+#footer-nav {
+    width: 100%;
+    margin-top: 40px;
+}
+
+#footer-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer-nav li {
+    display: flex;
+    align-items: center;
+}
+
+#footer-nav a {
+    color: #00dd00;
+    text-decoration: none;
+    border: 1px solid #00dd00;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+#footer-nav a:hover {
+    background-color: #00dd00;
+    color: #000000;
+}
+
+#footer-nav li:not(:last-child)::after {
+    content: ' ';
+    color: #00dd00;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#footer-nav li.active a {
+    background-color: #00dd00;
+    color: #000000;
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .projeto-card h3 {
+        font-size: 1.3rem;
+    }
+    #footer-nav li:not(:last-child)::after {
+        display: none;
+    }
 }

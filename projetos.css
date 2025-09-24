@@ -101,11 +101,37 @@ hr {
     color: #00dd00;
 }
 
+.secao-adicional,
 h6,
 footer,
 .projeto-card,
 #footer-nav {
     opacity: 0;
+}
+
+.secao-adicional {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px dashed rgba(0, 221, 0, 0.5);
+}
+
+.secao-adicional h4 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.secao-adicional h5 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 20px 0 10px 0;
+}
+
+.secao-adicional p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
 }
 
 h6 {
@@ -121,6 +147,7 @@ footer {
 }
 
 .conteudo.show-content .projeto-card,
+.conteudo.show-content .secao-adicional,
 .conteudo.show-content #footer-nav,
 .conteudo.show-content h6,
 .conteudo.show-content footer {
@@ -167,7 +194,7 @@ mark {
 }
 
 #footer-nav li:not(:last-child)::after {
-    content: ' ';
+    content: '|';
     color: #00dd00;
     margin-left: 20px;
     display: inline-block;

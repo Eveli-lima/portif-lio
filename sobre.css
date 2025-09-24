@@ -50,6 +50,9 @@ h1 {
 p {
     line-height: 1.6;
 }
+u {
+    text-decoration: underline;
+}
 h2 {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -116,7 +119,7 @@ footer {
     color: #000000;
 }
 #footer-nav li:not(:last-child)::after {
-    content: ' ';
+    content: '|';
     color: #00dd00;
     margin-left: 20px;
     display: inline-block;
@@ -151,39 +154,41 @@ footer {
 
 @media (max-height: 850px) {
     p {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin-bottom: 20px;
-    }
-    h2 {
-        margin-top: 20px;
+        font-size: 1.0rem;
+        line-height: 1.45;
         margin-bottom: 15px;
     }
-    ul {
-        gap: 15px;
+    h2 {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    ul li {
+        margin-bottom: 8px;
     }
 }
 @media (max-height: 750px) {
     h1 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
     p {
-        font-size: 1.0rem;
+        font-size: 1rem;
         line-height: 1.4;
     }
     h2 {
         font-size: 1.5rem;
-        margin-top: 15px;
+        margin-top: 10px;
         margin-bottom: 10px;
     }
     .subtitulo-habilidades {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     ul li {
-        margin-bottom: 5px;
+        margin-bottom: 4px;
+        font-size: 1rem;
     }
     #footer-nav {
-        margin-top: 20px;
+        margin-top: 15px;
+        padding-top: 15px;
     }
 }

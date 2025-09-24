@@ -53,12 +53,19 @@
                 <span>JavaScript</span>
             </div>
             <div class="projeto-links">
-                <a href="https://eveli-lima.github.io/portif-lio/index.html" target="_blank" title="Ver Deploy" rel="external" class="link-projeto">Ver Deploy</a>
+                <a href="https://eveli-lima.github.io/portif-lio/" target="_blank" title="Ver Deploy" rel="external" class="link-projeto">Ver Deploy</a>
                 <a href="#" target="_blank" title="Código no GitHub" rel="external" class="link-projeto">Código no GitHub</a>
             </div>
             <hr>
         </div>
 
+    </div>
+
+    <div class="secao-adicional">
+        <h4>Ferramentas e Ambiente</h4>
+        <p>Projetos desenvolvidos utilizando principalmente VS Code, Git e Terminal Windows.</p>
+        <h5>Versionamento</h5>
+        <p>Todo o versionamento de código é feito com Git e hospedado no GitHub.</p>
     </div>
 
     <h6>Em Breve novos projetos!</h6>
@@ -97,10 +104,11 @@
     async function startAnimationSequence() {
         const h1 = document.getElementById('titulo');
         const cards = document.querySelectorAll('.projeto-card');
-        const footerNav = document.querySelector('#footer-nav');
-        const contentContainer = document.querySelector('.conteudo');
+        const secaoAdicional = document.querySelector('.secao-adicional');
         const h6 = document.querySelector('.conteudo h6');
+        const footerNav = document.querySelector('#footer-nav');
         const footer = document.querySelector('.conteudo footer');
+        const contentContainer = document.querySelector('.conteudo');
         
         const h1Text = "> Projetos";
         
@@ -113,12 +121,14 @@
             lastCardDelay = currentDelay;
         });
         
-        const navLinksDelay = lastCardDelay + 0.4;
-        const h6Delay = navLinksDelay + 0.2;
-        const footerDelay = h6Delay + 0.2;
+        const secaoAdicionalDelay = lastCardDelay + 0.4;
+        const h6Delay = secaoAdicionalDelay + 0.2;
+        const navLinksDelay = h6Delay + 0.2;
+        const footerDelay = navLinksDelay + 0.2;
 
-        footerNav.style.animationDelay = `${navLinksDelay}s`;
+        secaoAdicional.style.animationDelay = `${secaoAdicionalDelay}s`;
         h6.style.animationDelay = `${h6Delay}s`;
+        footerNav.style.animationDelay = `${navLinksDelay}s`;
         footer.style.animationDelay = `${footerDelay}s`;
 
         contentContainer.classList.add('show-content');

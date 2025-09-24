@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | Portfólio Éveli Lima</title>
+    <link rel="stylesheet" href="projetos.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="conteudo">
+    <h1 id="titulo"></h1> <div class="projetos-grid">
+
+      <div class="projeto-card">
+        <h2>Projeto SOS Maricá</h2>
+        <h3>Informações</h3>
+        <p><strong>Descrição:</strong> <em>Um projeto em desenvolvimento de um chatbot de whatsapp que fornece <mark>informações importantes</mark> da cidade como serviços públicos, turismo entre outros.</em></p>
+        
+        <div class="projeto-tags">
+          <span>Python</span>
+          <span>Twilio</span>
+          <span>Flask</span>
+        </div>
+        <div class="projeto-links">
+          <a href="#" target="_blank" title="Ver Deploy" rel="external" class="link-projeto">Ver Deploy</a><br>
+          <a href="https://github.com/Eveli-lima/sos_marica/blob/main/app.py" target="_blank" title="Código no GitHub" rel="external" class="link-projeto"><u>Código no GitHub</u></a>
+        </div>
+        <hr>
+      </div>
+
+      <div class="projeto-card">
+        <h4>Calculadora básica</h4>
+        <p><strong>Descrição:</strong><em>Uma calculadora de linha de comando ou com uma interface simples com lógica em JS</em></p>
+        
+        <div class="projeto-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+        </div>
+        <div class="projeto-links">
+          <a href="https://github.com/Eveli-lima/calculadora/tree/main" target="_blank" title="Código no GitHub" rel="external" class="link-projeto"><u>Código no GitHub</u></a>
+        </div>
+        <hr>
+      </div>
+      
+      <div class="projeto-card">
+          <h5>Página de Portfólio</h5>
+          <p><strong>Descrição:</strong> <em>Meu portfólio pessoal, desenvolvido para mostrar minhas habilidades em <mark>front-end</mark> e <mark>design</mark>. Este mesmo site que você está vendo!</em></p>
+        
+          <div class="projeto-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="projeto-links">
+            <a href="#" target="_blank" title="Código no GitHub" rel="external" class="link-projeto"><u>Código no GitHub</u></a>
+          </div>
+          <hr>
+      </div>
+
+      </div>
+
+    <h6>Em Breve novos projetos!</h6>
+    <a href="index.html" class="link-voltar" title="Voltar para página inicial" rel="prev">&lt; Voltar</a>
+    <br><br>
+    <footer>
+      <p>© 2025 <strong>Éveli Lima</strong> | Todos os direitos reservados.</p>
+    </footer>
+</main>
+
+<script>
+    // Função para o efeito de digitação (a mesma que você já tem)
+    function typeWriter(element, text, speed) {
+    return new Promise(resolve => {
+        element.innerHTML = '';
+        let i = 0;
+        const timer = setInterval(() => {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+        } else {
+            clearInterval(timer);
+            resolve();
+        }
+        }, speed);
+    });
+    }
+
+    // Função principal que controla a sequência da animação
+    async function startAnimationSequence() {
+    const h1 = document.getElementById('titulo');
+    const cards = document.querySelectorAll('.projeto-card');
+    const backLink = document.querySelector('.link-voltar');
+    const contentContainer = document.querySelector('.conteudo');
+    
+    const h1Text = "> Projetos";
+    
+    // 1. Anima o título
+    await typeWriter(h1, h1Text, 150);
+
+    // 2. Anima os cards em cascata
+    let lastCardDelay = 0;
+    cards.forEach((card, index) => {
+        const currentDelay = 0.2 + index * 0.2; // Atraso de 0.2s entre cada card
+        card.style.animationDelay = `${currentDelay}s`;
+        lastCardDelay = currentDelay;
+    });
+    
+    // 3. Anima o link de voltar por último
+    backLink.style.animationDelay = `${lastCardDelay + 0.4}s`;
+
+    // 4. Adiciona a classe que dispara as animações CSS
+    contentContainer.classList.add('show-content');
+    }
+
+    // Inicia tudo quando o conteúdo da página carregar
+    document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(startAnimationSequence, 500); // Um pequeno delay inicial
+    });
+  </script>
+
+</body>
+</html>

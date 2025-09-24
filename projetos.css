@@ -1,0 +1,125 @@
+﻿/* Configurações gerais (semelhante ao seu outro CSS) */
+body {
+  background-color: #000000;
+  color: #00dd00;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.conteudo {
+  width: 100%;
+  max-width: 900px;
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título (controlado pelo JS) */
+h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px rgba(0, 221, 0, 0.5);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Grid de Projetos */
+.projetos-grid {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+  gap: 25px;       /* Espaçamento entre os cards */
+  justify-content: center;
+}
+
+/* Card de Projeto Individual */
+.projeto-card {
+  border: 1px solid #00dd00;
+  padding: 20px;
+  flex-basis: 350px; /* Largura base de cada card */
+  flex-grow: 1;      /* Permite que o card cresça para ocupar espaço */
+  opacity: 0;      /* Começa invisível para a animação */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre os elementos dentro do card */
+}
+
+.projeto-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff; /* Destaque para o título do projeto */
+}
+
+.projeto-card p {
+  margin: 0;
+  line-height: 1.6;
+  flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível, alinhando os links no final */
+}
+
+/* Tags de tecnologia */
+.projeto-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projeto-tags span {
+  background-color: rgba(0, 221, 0, 0.1);
+  border: 1px solid rgba(0, 221, 0, 0.5);
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+/* Links do projeto */
+.projeto-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.link-projeto {
+  color: #000000;
+  background-color: #00dd00;
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 1px solid #00dd00;
+  transition: all 0.3s ease;
+}
+
+.link-projeto:hover {
+  background-color: #000000;
+  color: #00dd00;
+}
+
+/* Link de Voltar e Animações */
+.link-voltar {
+  display: inline-block;
+  margin-top: 40px;
+  color: #00dd00;
+  text-decoration: none;
+  border: 1px solid #00dd00;
+  padding: 8px 15px;
+  opacity: 0; /* Começa invisível */
+}
+
+.link-voltar:hover {
+  background-color: #00dd00;
+  color: black;
+}
+
+/* Classe que o JS adiciona para iniciar as animações */
+.conteudo.show-content .projeto-card,
+.conteudo.show-content .link-voltar {
+  animation: surgir 0.7s forwards;
+}

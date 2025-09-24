@@ -16,8 +16,7 @@
     <div class="conteudo-principal">
         <h1 id="titulo"></h1>
         <p id="paragrafo">
-            Olá! Eu sou uma desenvolvedora apaixonada por <u>tecnologia e design</u>. Minha trajetória na área começou de forma autodidata durante a pandemia, quando comecei a estudar HTML, CSS, JavaScript e Python através de plataformas como o Curso em Vídeo. A identificação foi imediata.
-            <br><br>
+            Olá! Eu sou uma desenvolvedora apaixonada por tecnologia e design. Minha trajetória na área começou de forma autodidata durante a pandemia, quando comecei a estudar HTML, CSS, JavaScript e Python através de plataformas como o Curso em Vídeo. A identificação foi imediata.
             Decidida a seguir carreira, ingressei na graduação em Análise e Desenvolvimento de Sistemas pelo programa Passaporte Universitário de Maricá. Hoje, sigo aprimorando minhas competências com a faculdade e com estudos focados em tecnologias como Python, Power BI e Design, sempre em busca de novos desafios.
         </p>
         <section aria-labelledby="habilidades-titulo">
@@ -46,7 +45,7 @@
     </nav>
 
     <footer>
-        <p>© 2025 <strong>Éveli Lima</strong> | Todos os direitos reservados.</p>
+        <p>© 2025 <strong>Éveli Lima</strong> | Todos os direitos <u>reservados</u>.</p>
     </footer>
 </main>
 
@@ -62,25 +61,28 @@
         const footerNav = document.querySelector('#footer-nav');
         const footer = document.querySelector('.conteudo footer');
         const contentContainer = document.querySelector('.conteudo');
+        
         const h1Text = "Sobre Mim";
-        const pHTML = p.innerHTML;
-        const pTextForTyping = p.innerText;
+        const pText = p.innerText;
+
         function skipAnimation() {
             if (animationSkipped) return;
             animationSkipped = true;
             activeTimers.forEach(timer => clearInterval(timer));
             h1.innerHTML = h1Text;
-            p.innerHTML = pHTML;
+            p.innerText = pText;
             h1.style.opacity = 1;
             p.style.opacity = 1;
             contentContainer.classList.add('skip-animation');
             document.removeEventListener('click', skipAnimation);
         }
+        
         document.addEventListener('click', skipAnimation);
+
         function typeWriter(element, text, speed) {
             return new Promise(resolve => {
                 if (animationSkipped) {
-                    element.innerHTML = text;
+                    element.innerText = text;
                     element.style.opacity = 1;
                     resolve();
                     return;
@@ -100,29 +102,34 @@
                 activeTimers.push(timer);
             });
         }
+
         async function startAnimationSequence() {
             await typeWriter(h1, h1Text, 150);
             if (animationSkipped) return;
-            await typeWriter(p, pTextForTyping, 15);
-            if (!animationSkipped) {
-                p.innerHTML = pHTML;
-            }
+
+            await typeWriter(p, pText, 15);
             if (animationSkipped) return;
+
             h2.style.animationDelay = '0.2s';
             subtitulo.style.animationDelay = '0.4s';
+            
             let lastSkillDelay = 0;
             skills.forEach((skill, index) => {
                 const currentDelay = 0.5 + index * 0.2;
                 skill.style.animationDelay = `${currentDelay}s`;
                 lastSkillDelay = currentDelay;
             });
+
             const navDelay = lastSkillDelay + 0.4;
             const footerDelay = navDelay + 0.2;
+
             footerNav.style.animationDelay = `${navDelay}s`;
             footer.style.animationDelay = `${footerDelay}s`;
+
             contentContainer.classList.add('show-remaining-content');
             document.removeEventListener('click', skipAnimation);
         }
+
         setTimeout(startAnimationSequence, 500);
     });
 </script>

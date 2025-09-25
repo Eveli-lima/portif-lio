@@ -26,11 +26,11 @@
 @keyframes surgir {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(15px); /* Começa invisível e ligeiramente abaixo */
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0); /* Termina na posição original */
     }
 }
 h1,
@@ -55,51 +55,51 @@ u {
 }
 h2 {
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
     text-shadow: 0 0 5px rgba(0, 221, 0, 0.5);
 }
 ul {
-    list-style: none;
+    list-style: none; /* Remove os marcadores padrão */
     padding-left: 0;
-    column-count: 2;
-    column-gap: 40px;
+    column-count: 2; /* Divide em duas colunas */
+    column-gap: 40px; /* Espaçamento entre as colunas */
 }
 ul li {
     break-inside: avoid;
     margin-bottom: 10px;
 }
-.conteudo.show-remaining-content h2,
-.conteudo.show-remaining-content .subtitulo-habilidades,
-.conteudo.show-remaining-content ul li,
-.conteudo.show-remaining-content #footer-nav,
-.conteudo.show-remaining-content footer {
+.conteudo.show-remaining-content h2, /* Animação para o subtítulo */
+.conteudo.show-remaining-content .subtitulo-habilidades, /* Animação para o subtítulo de habilidades */
+.conteudo.show-remaining-content ul li, /* Animação para os itens da lista */
+.conteudo.show-remaining-content #footer-nav, /* Animação para o footer nav */
+.conteudo.show-remaining-content footer { /* Animação para o footer */
     animation: surgir 0.7s forwards;
 }
-.conteudo.skip-animation h2,
-.conteudo.skip-animation .subtitulo-habilidades,
-.conteudo.skip-animation ul li,
-.conteudo.skip-animation #footer-nav,
-.conteudo.skip-animation footer {
+.conteudo.skip-animation h2, /* Pula a animação do subtítulo */
+.conteudo.skip-animation .subtitulo-habilidades, /* Pula a animação do subtítulo de habilidades */
+.conteudo.skip-animation ul li, /* Pula a animação dos itens da lista */
+.conteudo.skip-animation #footer-nav, /* Pula a animação do footer nav */
+.conteudo.skip-animation footer { /* Pula a animação do footer */
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Garante que esteja na posição original */
     animation: none;
 }
-footer {
+footer { 
     text-align: center;
     font-size: 0.9rem;
     color: rgba(0, 221, 0, 0.7);
     padding: 10px 0;
 }
-#footer-nav {
+#footer-nav { 
     width: 100%;
     margin-top: auto;
     padding-top: 20px;
 }
-#footer-nav ul {
+#footer-nav ul { /* Estiliza a lista dentro do footer nav */
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
     justify-content: center;
-    gap: 15px 20px;
+    gap: 15px 20px; /* Espaçamento entre os itens */
     column-count: unset;
 }
 #footer-nav li {

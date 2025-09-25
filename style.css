@@ -45,7 +45,7 @@
     pointer-events: none;
 }
 
-.tela-monitor h2 {
+.tela-monitor h1 {
     font-size: 1.5rem;
     text-shadow: 0 0 5px #00ff00;
     margin-top: -70px;
@@ -57,7 +57,7 @@
     animation: digitando 4s steps(21, end) forwards;
 }
 
-.tela-monitor h2::after {
+.tela-monitor h1::after {
     content: "";
     display: inline-block;
     width: 0.6em;

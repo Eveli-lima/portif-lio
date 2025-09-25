@@ -6,11 +6,11 @@
     padding: 20px;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+    overflow: hidden; /* Evita rolagem indesejada */
+    display: flex; /* Centraliza o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Inclui padding na largura total */
 }
 
 .conteudo {
@@ -18,13 +18,13 @@
     max-width: 800px;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
     text-align: center;
 }
 
 .conteudo-principal {
-    flex-grow: 1;
-    overflow-y: auto;
+    flex-grow: 1; /* Permite que o conteúdo principal cresça */
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que a área visível */
     padding: 0 10px;
 }
 
@@ -64,7 +64,7 @@ p {
     list-style: none;
     padding: 0;
     margin: 0 auto 40px auto;
-    max-width: 450px;
+    max-width: 450px; /* Limita a largura da lista de contatos */
 }
 
 .lista-contatos li {
@@ -74,7 +74,7 @@ p {
 .lista-contatos li a {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centraliza o conteúdo do link */
     padding: 15px;
     border: 1px solid #00dd00;
     color: #00dd00;
@@ -93,8 +93,8 @@ p {
     width: 30px;
 }
 
-.conteudo.show-content .lista-contatos li,
-.conteudo.show-content #footer-nav,
+.conteudo.show-content .lista-contatos li, /* Animação para os itens da lista de contatos */
+.conteudo.show-content #footer-nav, /* Animação para o footer nav */
 .conteudo.show-content footer {
     animation: surgir 0.7s forwards;
 }
@@ -138,7 +138,7 @@ footer {
     transition: all 0.3s ease;
 }
 
-#footer-nav a:hover {
+#footer-nav a:hover { 
     background-color: #00dd00;
     color: #000000;
 }
@@ -156,7 +156,7 @@ footer {
     cursor: default;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Estilos para telas pequenas */
     body {
         font-size: 1rem;
         padding: 10px;
@@ -169,6 +169,6 @@ footer {
         margin-right: 10px;
     }
     #footer-nav li:not(:last-child)::after {
-        display: none;
+        display: none; /* Remove o separador em telas pequenas */
     }
 }

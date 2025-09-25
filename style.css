@@ -107,7 +107,7 @@
     border: 1px solid rgba(0, 221, 0, 0.5);
     border-radius: 3px;
     transition: all 0.3s ease;
-    pointer-events: auto; /* Permite a interação com os links *
+    pointer-events: auto; /* Permite a interação com os links */
 }
 /* :hover é um "seletor de estado" do CSS que aplica estilos quando o usuário passa o mouse sobre o elemento. */
 .monitor-nav a:hover {
